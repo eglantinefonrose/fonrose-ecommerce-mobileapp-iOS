@@ -1,24 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2UO-22-sgZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Home Page Table View Controller-->
+        <scene sceneID="Nbx-t9-38A">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="2UO-22-sgZ" customClass="HomePageTableViewController" customModule="fonrose_ecommerce_mobileapp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mGw-gH-Qbl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageTableViewCell" rowHeight="620" id="nmE-Zr-QTd" customClass="HomePageTableViewCell" customModule="fonrose_ecommerce_mobileapp_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="620"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nmE-Zr-QTd" id="Vr2-fF-3Bf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="619.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-Un-wxF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03g-9L-mwU">
+                                            <rect key="frame" x="157" y="295" width="61" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0Z3-Un-wxF" firstAttribute="top" secondItem="Vr2-fF-3Bf" secondAttribute="top" id="97I-KR-8wE"/>
+                                        <constraint firstItem="0Z3-Un-wxF" firstAttribute="leading" secondItem="Vr2-fF-3Bf" secondAttribute="leading" id="Dtn-Bd-rWR"/>
+                                        <constraint firstAttribute="bottom" secondItem="0Z3-Un-wxF" secondAttribute="bottom" id="JFz-i8-etZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="0Z3-Un-wxF" secondAttribute="trailing" id="Jfh-Gb-c6R"/>
+                                        <constraint firstItem="03g-9L-mwU" firstAttribute="centerY" secondItem="Vr2-fF-3Bf" secondAttribute="centerY" id="noA-zu-KvV"/>
+                                        <constraint firstItem="03g-9L-mwU" firstAttribute="centerX" secondItem="Vr2-fF-3Bf" secondAttribute="centerX" id="wqx-2a-5C7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backgroundImage" destination="0Z3-Un-wxF" id="vdh-BV-L4Y"/>
+                                    <outlet property="textOnTheMiddel" destination="03g-9L-mwU" id="MYE-R9-r11"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2UO-22-sgZ" id="kCw-6Z-RLm"/>
+                            <outlet property="delegate" destination="2UO-22-sgZ" id="a7u-f8-EMU"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0v-57-0UY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="664.79999999999995" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
