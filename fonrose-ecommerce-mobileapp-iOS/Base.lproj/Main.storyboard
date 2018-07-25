@@ -13,23 +13,23 @@
         <scene sceneID="Nbx-t9-38A">
             <objects>
                 <tableViewController id="2UO-22-sgZ" customClass="HomePageTableViewController" customModule="fonrose_ecommerce_mobileapp_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mGw-gH-Qbl">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="619" sectionHeaderHeight="28" sectionFooterHeight="28" id="mGw-gH-Qbl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageTableViewCell" rowHeight="620" id="nmE-Zr-QTd" customClass="HomePageTableViewCell" customModule="fonrose_ecommerce_mobileapp_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="620"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageTableViewCell" rowHeight="500" id="nmE-Zr-QTd" customClass="HomePageTableViewCell" customModule="fonrose_ecommerce_mobileapp_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nmE-Zr-QTd" id="Vr2-fF-3Bf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="619.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="499.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-Un-wxF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-Un-wxF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="621"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03g-9L-mwU">
-                                            <rect key="frame" x="157" y="295" width="61" height="30"/>
+                                            <rect key="frame" x="157" y="235" width="61" height="30"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,6 +55,9 @@
                             <outlet property="delegate" destination="2UO-22-sgZ" id="a7u-f8-EMU"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="linkToTableView" destination="mGw-gH-Qbl" id="jg0-YB-mN8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0v-57-0UY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,6 +16,7 @@ class HomePageTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        defineAutomaticTableViewCellDimension()
         loadDefaultCell()
         
         
@@ -108,19 +109,20 @@ class HomePageTableViewController: UITableViewController {
         let image02 = UIImage(named: "robe")!
         let image03 = UIImage(named: "nabilfekir")!
         
-        
         let promo1 = HomePage(backgroundImage: image01, textOnTheMiddel: "Watch the clip")
         let promo2 = HomePage(backgroundImage: image02, textOnTheMiddel: "Fly w/ the dress")
         let promo3 = HomePage(backgroundImage: image03, textOnTheMiddel: "........ w/ the poncho")
         
         promos += [promo1, promo2, promo3]
-        
-        
     }
     
     
+    private func defineAutomaticTableViewCellDimension() {
+        linkToTableView.rowHeight = UIScreen.main.bounds.height
+        
+    }
     
-    
+    @IBOutlet var linkToTableView: UITableView!
     
 }
 
