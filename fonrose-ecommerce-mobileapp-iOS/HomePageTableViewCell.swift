@@ -14,7 +14,7 @@ class HomePageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var textOnTheMiddel: UILabel!
-
+    @IBOutlet weak var buttonUnderLabel: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import AVKit
 
 class HomePageTableViewController: UITableViewController {
     
     //MARK: Properties
-    var promos = [HomePage]()
+    var promos = [Promo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         defineAutomaticTableViewCellDimension()
         loadDefaultCell()
-        
         
     }
 
@@ -49,7 +49,8 @@ class HomePageTableViewController: UITableViewController {
         let promo = promos[indexPath.row]
         
         cell.backgroundImage.image = promo.backgroundImage
-        cell.textOnTheMiddel.text = promo.textOnTheMiddel 
+        cell.textOnTheMiddel.text = promo.textOnTheMiddel
+        cell.buttonUnderLabel.tag = promo.identity;
         
 
         return cell
@@ -109,13 +110,12 @@ class HomePageTableViewController: UITableViewController {
         let image02 = UIImage(named: "robe")!
         let image03 = UIImage(named: "nabilfekir")!
         
-        let promo1 = HomePage(backgroundImage: image01, textOnTheMiddel: "Watch the clip")
-        let promo2 = HomePage(backgroundImage: image02, textOnTheMiddel: "Fly w/ the dress")
-        let promo3 = HomePage(backgroundImage: image03, textOnTheMiddel: "........ w/ the poncho")
+        let promo1 = Promo(backgroundImage: image01, textOnTheMiddel: "Watch the clip",         identity: 29)
+        let promo2 = Promo(backgroundImage: image02, textOnTheMiddel: "Fly w/ the dress",       identity: 12)
+        let promo3 = Promo(backgroundImage: image03, textOnTheMiddel: "........ w/ the poncho", identity: 7)
         
         promos += [promo1, promo2, promo3]
     }
-    
     
     private func defineAutomaticTableViewCellDimension() {
         linkToTableView.rowHeight = UIScreen.main.bounds.height
@@ -123,6 +123,27 @@ class HomePageTableViewController: UITableViewController {
     }
     
     @IBOutlet var linkToTableView: UITableView!
+    
+    @IBAction func actionButton(_ sender: UIButton) {
+        
+        print("Le bouton sur lequel vous avez cliqué a l'identity [\(sender.tag)]")
+        
+        // If the identify of the button clicked is '29', it's the "Watch the clip" cell
+        if sender.tag == 29 {
+            if let path = Bundle.main.path(forResource: "Pluie-de-coeurs", ofType: "mp4") {
+                
+                let video = AVPlayer(url: URL(fileURLWithPath: path))
+                let videoPlayer = AVPlayerViewController()
+                videoPlayer.player = video
+                
+                present(videoPlayer, animated: true, completion: {
+                    video.play()
+                })
+            }
+        }
+    }
+    
+    
     
 }
 

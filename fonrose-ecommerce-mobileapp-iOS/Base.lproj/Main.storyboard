@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,8 +26,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="499.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-Un-wxF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="621"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-Un-wxF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="499.5"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03g-9L-mwU">
                                             <rect key="frame" x="157" y="235" width="61" height="30"/>
@@ -34,18 +35,31 @@
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-oz-RE2">
+                                            <rect key="frame" x="91" y="211" width="193" height="78"/>
+                                            <connections>
+                                                <action selector="actionButton:" destination="2UO-22-sgZ" eventType="touchUpInside" id="aeX-3G-gN2"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Tag-oz-RE2" firstAttribute="centerX" secondItem="Vr2-fF-3Bf" secondAttribute="centerX" id="0JN-x9-L36"/>
+                                        <constraint firstItem="Tag-oz-RE2" firstAttribute="centerY" secondItem="Vr2-fF-3Bf" secondAttribute="centerY" id="5AO-Ec-t6M"/>
                                         <constraint firstItem="0Z3-Un-wxF" firstAttribute="top" secondItem="Vr2-fF-3Bf" secondAttribute="top" id="97I-KR-8wE"/>
                                         <constraint firstItem="0Z3-Un-wxF" firstAttribute="leading" secondItem="Vr2-fF-3Bf" secondAttribute="leading" id="Dtn-Bd-rWR"/>
                                         <constraint firstAttribute="bottom" secondItem="0Z3-Un-wxF" secondAttribute="bottom" id="JFz-i8-etZ"/>
                                         <constraint firstAttribute="trailing" secondItem="0Z3-Un-wxF" secondAttribute="trailing" id="Jfh-Gb-c6R"/>
+                                        <constraint firstItem="Tag-oz-RE2" firstAttribute="top" secondItem="Vr2-fF-3Bf" secondAttribute="topMargin" constant="200" id="P21-cZ-izX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Tag-oz-RE2" secondAttribute="trailing" constant="75" id="cEB-KQ-ZlX"/>
+                                        <constraint firstItem="Tag-oz-RE2" firstAttribute="leading" secondItem="Vr2-fF-3Bf" secondAttribute="leadingMargin" constant="75" id="nkH-j2-F3K"/>
                                         <constraint firstItem="03g-9L-mwU" firstAttribute="centerY" secondItem="Vr2-fF-3Bf" secondAttribute="centerY" id="noA-zu-KvV"/>
                                         <constraint firstItem="03g-9L-mwU" firstAttribute="centerX" secondItem="Vr2-fF-3Bf" secondAttribute="centerX" id="wqx-2a-5C7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Tag-oz-RE2" secondAttribute="bottom" constant="200" id="zL1-Xf-dMg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundImage" destination="0Z3-Un-wxF" id="vdh-BV-L4Y"/>
+                                    <outlet property="buttonUnderLabel" destination="Tag-oz-RE2" id="9Sb-If-dKA"/>
                                     <outlet property="textOnTheMiddel" destination="03g-9L-mwU" id="MYE-R9-r11"/>
                                 </connections>
                             </tableViewCell>
