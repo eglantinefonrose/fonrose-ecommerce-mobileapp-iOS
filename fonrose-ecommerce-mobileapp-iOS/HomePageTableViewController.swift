@@ -18,8 +18,7 @@ class HomePageTableViewController: UITableViewController {
         super.viewDidLoad()
 
         defineAutomaticTableViewCellDimension()
-        loadDefaultCell()
-        
+        initializePromos()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,84 +26,53 @@ class HomePageTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //
+    //
+    //  Configuration of the TableView
+    //
+    //
+    
+    @IBOutlet var linkToTableView: UITableView!
 
+    // Define the number of sections in the TableView
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
+    // Define the number of rows in the TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return promos.count
     }
-
+    
+    // Create the cells of the TableView
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+
+        // Create the cell
         let cellIdentifier = "HomePageTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HomePageTableViewCell
             else {
                 fatalError("Erreur de mes couilles")
         }
         
+        // Store information inside the cell
         let promo = promos[indexPath.row]
-        
         cell.backgroundImage.image = promo.backgroundImage
         cell.textOnTheMiddel.text = promo.textOnTheMiddel
         cell.buttonUnderLabel.tag = promo.identity;
-        
 
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    //MARK: Private Methods
-    
-    private func loadDefaultCell() {
+    private func initializePromos() {
         
         let image01 = UIImage(named: "lumière")!
         let image02 = UIImage(named: "robe")!
@@ -118,17 +86,50 @@ class HomePageTableViewController: UITableViewController {
     }
     
     private func defineAutomaticTableViewCellDimension() {
+        // Force the size of the cell so that they match the height of the screen
         linkToTableView.rowHeight = UIScreen.main.bounds.height
         
     }
+
     
-    @IBOutlet var linkToTableView: UITableView!
+    
+    
+    
+    
+    
+    
+    
+    
+    //
+    //
+    //  Navigation between views (via the Segues)
+    //
+    //
+    
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "productDescriptionSegue" {
+            
+            if (sender as! UIButton).tag == 12 {
+                let productDescriptionViewController = segue.destination as! ProductDescriptionViewController
+                productDescriptionViewController.productDescriptionImage_URL = "robeProductDescription-1"
+                productDescriptionViewController.productDescriptionTextLabel_Text = "Cette robe a été pensée pour être légère, elle a été pensée pour souligner l’élégance et la souplesse. Ses couleurs, uniquement des couleurs de pétales de fleurs, devraient être rejointes par tout les spécimens trouvables dans les massifs. Côté habillé à casser avec une paire de sneakers ou à souligner avec des talons hauts. Fait main et à la machine à coudre, chaque modèle est donc une pièce unique."
+                productDescriptionViewController.productDescriptionCustomizeButton_Label = "Customize my Dress"
+            }
+        }
+    }
+
+    
+    //MARK: Private Methods
+    
+    
     
     @IBAction func actionButton(_ sender: UIButton) {
         
         print("Le bouton sur lequel vous avez cliqué a l'identity [\(sender.tag)]")
         
-        // If the identify of the button clicked is '29', it's the "Watch the clip" cell
+        // Click on the "Watch the clip" cell
         if sender.tag == 29 {
             if let path = Bundle.main.path(forResource: "Pluie-de-coeurs", ofType: "mp4") {
                 
@@ -141,6 +142,15 @@ class HomePageTableViewController: UITableViewController {
                 })
             }
         }
+        
+        // Click on the "Fly with the Dress" cell
+        if sender.tag == 12 {
+            performSegue(withIdentifier: "productDescriptionSegue", sender: sender)
+        }
+        
+        // Click on the "Jojo with the Poncho" cell
+        if sender.tag == 7 {        }
+
     }
     
     
