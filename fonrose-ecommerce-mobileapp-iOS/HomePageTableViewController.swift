@@ -117,6 +117,12 @@ class HomePageTableViewController: UITableViewController {
                 productDescriptionViewController.productDescriptionTextLabel_Text = "Cette robe a été pensée pour être légère, elle a été pensée pour souligner l’élégance et la souplesse. Ses couleurs, uniquement des couleurs de pétales de fleurs, devraient être rejointes par tout les spécimens trouvables dans les massifs. Côté habillé à casser avec une paire de sneakers ou à souligner avec des talons hauts. Fait main et à la machine à coudre, chaque modèle est donc une pièce unique."
                 productDescriptionViewController.productDescriptionCustomizeButton_Label = "Customize my Dress"
             }
+            if (sender as! UIButton).tag == 7 {
+                let productDescriptionViewController = segue.destination as! ProductDescriptionViewController
+                productDescriptionViewController.productDescriptionImage_URL = "ponchoProductDescription-1"
+                productDescriptionViewController.productDescriptionTextLabel_Text = "Ce poncho a été pensée pour être légère, elle a été pensée pour souligner l’élégance et la souplesse. Ses couleurs, uniquement des couleurs de pétales de fleurs, devraient être rejointes par tout les spécimens trouvables dans les massifs. Côté habillé à casser avec une paire de sneakers ou à souligner avec des talons hauts. Fait main et à la machine à coudre, chaque modèle est donc une pièce unique."
+                productDescriptionViewController.productDescriptionCustomizeButton_Label = "Customize my poncho"
+            }
         }
     }
 
@@ -149,7 +155,9 @@ class HomePageTableViewController: UITableViewController {
         }
         
         // Click on the "Jojo with the Poncho" cell
-        if sender.tag == 7 {        }
+        if sender.tag == 7 {
+            performSegue(withIdentifier: "productDescriptionSegue", sender: sender)
+        }
 
     }
     
