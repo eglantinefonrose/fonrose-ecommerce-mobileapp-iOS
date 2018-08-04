@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		70332FCA210CDD91005D7C1E /* Pluie-de-coeurs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7031A7A32109F78E00A632E5 /* Pluie-de-coeurs.mp4 */; };
 		70332FCC210DD62C005D7C1E /* ProductDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70332FCB210DD62C005D7C1E /* ProductDescriptionViewController.swift */; };
-		70724AFD2110635E007E3C3F /* myFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70724AFC2110635E007E3C3F /* myFavoriteViewController.swift */; };
+		70724AFD2110635E007E3C3F /* MensurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70724AFC2110635E007E3C3F /* MensurationViewController.swift */; };
 		70724B042114AF13007E3C3F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70724B032114AF13007E3C3F /* CoreLocation.framework */; };
 		707F444A211591C6002C67EC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707F4449211591C6002C67EC /* MapViewController.swift */; };
+		707F444C2115B01D002C67EC /* MyFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707F444B2115B01D002C67EC /* MyFavoritesViewController.swift */; };
 		7096E1B92106513F0037FE56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096E1B82106513F0037FE56 /* AppDelegate.swift */; };
 		7096E1BB2106513F0037FE56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096E1BA2106513F0037FE56 /* ViewController.swift */; };
 		7096E1BE2106513F0037FE56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7096E1BC2106513F0037FE56 /* Main.storyboard */; };
@@ -26,9 +27,10 @@
 		7031A7A32109F78E00A632E5 /* Pluie-de-coeurs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pluie-de-coeurs.mp4"; sourceTree = "<group>"; };
 		70332FC8210CDD53005D7C1E /* Pluie de cœurs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pluie de cœurs.mp4"; sourceTree = "<group>"; };
 		70332FCB210DD62C005D7C1E /* ProductDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionViewController.swift; sourceTree = "<group>"; };
-		70724AFC2110635E007E3C3F /* myFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFavoriteViewController.swift; sourceTree = "<group>"; };
+		70724AFC2110635E007E3C3F /* MensurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensurationViewController.swift; sourceTree = "<group>"; };
 		70724B032114AF13007E3C3F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		707F4449211591C6002C67EC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		707F444B2115B01D002C67EC /* MyFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesViewController.swift; sourceTree = "<group>"; };
 		7096E1B52106513F0037FE56 /* fonrose-ecommerce-mobileapp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fonrose-ecommerce-mobileapp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7096E1B82106513F0037FE56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7096E1BA2106513F0037FE56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,13 +90,14 @@
 				7096E1D2210665AD0037FE56 /* Promo.swift */,
 				7096E1D821087B480037FE56 /* HomePageTableViewCell.swift */,
 				7096E1DA210882230037FE56 /* HomePageTableViewController.swift */,
-				70724AFC2110635E007E3C3F /* myFavoriteViewController.swift */,
+				70724AFC2110635E007E3C3F /* MensurationViewController.swift */,
 				707F4449211591C6002C67EC /* MapViewController.swift */,
 				7096E1BC2106513F0037FE56 /* Main.storyboard */,
 				7096E1BF210651420037FE56 /* Assets.xcassets */,
 				7096E1C1210651420037FE56 /* LaunchScreen.storyboard */,
 				7096E1C4210651420037FE56 /* Info.plist */,
 				70332FCB210DD62C005D7C1E /* ProductDescriptionViewController.swift */,
+				707F444B2115B01D002C67EC /* MyFavoritesViewController.swift */,
 			);
 			path = "fonrose-ecommerce-mobileapp-iOS";
 			sourceTree = "<group>";
@@ -176,7 +179,8 @@
 				7096E1DB210882230037FE56 /* HomePageTableViewController.swift in Sources */,
 				7096E1B92106513F0037FE56 /* AppDelegate.swift in Sources */,
 				7096E1D3210665AD0037FE56 /* Promo.swift in Sources */,
-				70724AFD2110635E007E3C3F /* myFavoriteViewController.swift in Sources */,
+				707F444C2115B01D002C67EC /* MyFavoritesViewController.swift in Sources */,
+				70724AFD2110635E007E3C3F /* MensurationViewController.swift in Sources */,
 				7096E1D921087B480037FE56 /* HomePageTableViewCell.swift in Sources */,
 				707F444A211591C6002C67EC /* MapViewController.swift in Sources */,
 			);
