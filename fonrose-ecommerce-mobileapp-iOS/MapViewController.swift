@@ -8,16 +8,31 @@
 
 import UIKit
 import MapKit
-import CoreLocation 
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var myMap: MKMapView!
+    
+    let manager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+        
+        
+        
+        
     }
    
 }

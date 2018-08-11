@@ -137,7 +137,7 @@ class HomePageTableViewController: UITableViewController {
         
         // Click on the "Watch the clip" cell
         if sender.tag == 29 {
-            if let path = Bundle.main.path(forResource: "Pluie-de-coeurs", ofType: "mp4") {
+            if let path = Bundle.main.path(forResource: "Pluie de coeurs2", ofType: "mp4") {
                 
                 let video = AVPlayer(url: URL(fileURLWithPath: path))
                 let videoPlayer = AVPlayerViewController()
