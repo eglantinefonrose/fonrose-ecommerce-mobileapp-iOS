@@ -29,16 +29,16 @@ class CustomizeMyDressViewController: UIViewController {
         colorChosen = "blue"
         // Change the button image and color label
         colorNameLabel.text = "Bleu delphinum"
-        let blueDressImage = UIImage(named: "dressColorIconImage-blue")
-        colorIllustrationButton.setBackgroundImage(blueDressImage, for: UIControlState.normal)
+        let blueDressImage = UIImage(named: "dressColorButton-blue.jpg")
+        colorIllustrationButton.setImage(blueDressImage, for: UIControlState.normal)
     }
     
     fileprivate func switchColorToRed() {
         // Set the color to 'red'
         colorChosen = "red"
         colorNameLabel.text = "Rouge coquelicot"
-        let redDressImage = UIImage(named: "dressColorIconImage-red")
-        colorIllustrationButton.setBackgroundImage(redDressImage, for: UIControlState.normal)
+        let redDressImage = UIImage(named: "dressColorButton-red.jpg")
+        colorIllustrationButton.setImage(redDressImage, for: UIControlState.normal)
     }
     
     @IBAction func changeColorButtonClicked(_ sender: Any) {
@@ -50,6 +50,11 @@ class CustomizeMyDressViewController: UIViewController {
         }
         // DEBUG statement
         print("The color is now \(colorChosen)")
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
 }

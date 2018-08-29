@@ -10,12 +10,7 @@ import UIKit
 
 class MensurationViewController: UIViewController {
     
-    var armMesure: String = ""
-    var armpitMesure: String = ""
-    var shouldersMesure: String = ""
-    var headMesure: String = ""
-    var tighMesure: String = ""
-    var pelvisMesure: String = ""
+    var measurements: Measurements
 
     @IBOutlet weak var armTextField: UITextField!
     @IBOutlet weak var armPitTextField: UITextField!
@@ -32,24 +27,24 @@ class MensurationViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showOrderSummary" {
-            let destinationViewController_orderSummaryVC = segue.destination as! OrderSummayViewController
-            destinationViewController_orderSummaryVC.armMesure = armTextField.text!
-            destinationViewController_orderSummaryVC.armpitMesure = armPitTextField.text!
-            destinationViewController_orderSummaryVC.shouldersMesure = shouldersTextField.text!
-            destinationViewController_orderSummaryVC.headMesure = headTextField.text!
-            destinationViewController_orderSummaryVC.tighMesure = tighTextField.text!
-            destinationViewController_orderSummaryVC.pelvisMesure = pelvisTextField.text!
+            MeasurementsManagementService.singleton.measurements = Measurements(
+                armTextField.text!,
+                armPitTextField.text!,
+                shouldersTextField.text!,
+                headTextField.text!,
+                tighTextField.text!,
+                pelvisTextField.text!)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        armTextField.text = armMesure
-        armPitTextField.text = armpitMesure
-        shouldersTextField.text = shouldersMesure
-        headTextField.text = headMesure
-        tighTextField.text = tighMesure
-        pelvisTextField.text = pelvisMesure
+        armTextField.text = MeasurementsManagementService.singleton.measurements.armMesure
+        armPitTextField.text = MeasurementsManagementService.singleton.measurements.armpitMesure
+        shouldersTextField.text = MeasurementsManagementService.singleton.measurements.shouldersMesure
+        headTextField.text = MeasurementsManagementService.singleton.measurements.headMesure
+        tighTextField.text = MeasurementsManagementService.singleton.measurements.tighMesure
+        pelvisTextField.text = MeasurementsManagementService.singleton.measurements.pelvisMesure
     }
     
 }

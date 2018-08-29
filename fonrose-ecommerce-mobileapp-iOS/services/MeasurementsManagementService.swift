@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class MeasurementsManagementService {
+    
+    static let singleton: MeasurementsManagementService = MeasurementsManagementService()
+    
+    var measurements: Measurements!
+    
+}
